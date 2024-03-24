@@ -3,3 +3,6 @@
 1711265301543 : ::1 | POST -> /api/users
 1711265313709 : ::1 | PATCH -> /api/users/1003
 1711265323927 : ::1 | DELETE -> /api/users/1003
+1711266305819 : ::1 | GET -> /api/users
+1711266571220 : ::1 | GET -> /api/users
+1711266773926 : ::1 | GET -> /api/users

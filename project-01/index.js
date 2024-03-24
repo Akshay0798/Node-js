@@ -32,6 +32,8 @@ app.get("/users", (req, res) => {
 // Route to get all users in JSON format
 app.get("/api/users", (req, res) => {
   //! console.log("I am in get route",req.myUserName)
+   res.setHeader("X-MyName","Akshay Umredkar"); //custom header - Always add X in custom header
+   console.log(req.headers);
   return res.json(users);
 });
 
