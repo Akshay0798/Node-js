@@ -6,6 +6,18 @@ const PORT = 8000;
 
 // Middleware - Plugin (plugin ne data uthaya which I write in "postman/POST/Body/x-www-form-urlencoded", javascript object create kiya and "req.body" ke ander dal diya)
 app.use(express.urlencoded({ extended: false }));
+// Date 23/03/2024 - Express Middleware
+app.use((req, res, next) => {
+  console.log("Hello from middleware 1");
+  req.myUserName = 'ak.umredkar';
+  //! return res.json({ message : "Hello from middleware 1" })
+  next()
+})
+app.use((req, res, next) => {
+  console.log("Hello from middleware 2",req.myUserName);
+  next()
+})
+
 
 // Routes
 // Route to get a list of users in HTML format
@@ -17,6 +29,7 @@ app.get("/users", (req, res) => {
 // REST API
 // Route to get all users in JSON format
 app.get("/api/users", (req, res) => {
+  //! console.log("I am in get route",req.myUserName)
   return res.json(users);
 });
 
