@@ -14,8 +14,10 @@ app.use((req, res, next) => {
   next()
 })
 app.use((req, res, next) => {
-  console.log("Hello from middleware 2",req.myUserName);
-  next()
+  fs.appendFile('log.txt',`\n${Date.now()} : ${req.ip} | ${req.method} -> ${req.path}`,(err,data)=>{
+    next()
+  })
+  //! console.log("Hello from middleware 2",req.myUserName);
 })
 
 
