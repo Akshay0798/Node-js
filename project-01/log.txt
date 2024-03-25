@@ -6,3 +6,6 @@
 1711266305819 : ::1 | GET -> /api/users
 1711266571220 : ::1 | GET -> /api/users
 1711266773926 : ::1 | GET -> /api/users
+1711387136754 : ::1 | GET -> /api/users
+1711387198338 : ::1 | POST -> /api/users
+1711387256473 : ::1 | GET -> /api/users/1003
