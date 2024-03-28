@@ -9,7 +9,7 @@ const PORT = 9000;
 
 // Connect to MongoDB
 mongoose
-  .connect("mongodb://127.0.0.1:27017/youtube-app-1") // "Facebook-app-1" DataBase Name
+  .connect("mongodb://127.0.0.1:27017/youtube-app-1") // "youtube-app-1" DataBase Name
   .then(() => console.log("MongoDB connected")) // Returns promises
   .catch((err) => console.log("Mongo Error", err));
 
