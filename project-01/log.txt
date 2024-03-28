@@ -9,3 +9,10 @@
 1711387136754 : ::1 | GET -> /api/users
 1711387198338 : ::1 | POST -> /api/users
 1711387256473 : ::1 | GET -> /api/users/1003
+1711611201879 : ::1 | POST -> /api/users
+1711611245040 : ::1 | GET -> /api/users
+1711611250249 : ::1 | POST -> /api/users
+1711611268673 : ::1 | GET -> /api/users/1003
+1711611274953 : ::1 | POST -> /api/users
+1711611465726 : ::1 | POST -> /api/users
+1711611477421 : ::1 | POST -> /api/users
