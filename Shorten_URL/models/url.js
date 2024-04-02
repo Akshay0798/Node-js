@@ -13,10 +13,10 @@ const urlSchema = new mongoose.Schema(
     },
     visitHistory: [{ timestamps: { type: Number } }],
   },
-  { timestamps: true }
+  { timestamps: true } // The schema will automatically add 'createdAt' and 'updatedAt' fields to each document
 );
 
-//creating a Model
-//By using URL i will use Mongo
+
+// Create a model named "URL" using the schema
 const URL = mongoose.model("url", urlSchema);
 module.exports = URL;
