@@ -1,11 +1,13 @@
 const express = require("express"); // Importing Express framework
 const path = require("path"); // Importing Node.js path module
 const { connectToMongoDB } = require("./connect"); // Importing the MongoDB connection function
-const urlRoute = require("./routes/url"); // Importing URL route handler
 const URL = require("./models/url"); // Importing the URL model
-const staticRoute = require("./routes/staticRouter"); // Importing static router
 const app = express(); // Create an Express application
 const PORT = 8001; // Define the port number
+
+const urlRoute = require("./routes/url"); // Importing URL route handler
+const staticRoute = require("./routes/staticRouter"); // Importing static router
+const userRoute = require('./routes/user');
 
 // Connect to MongoDB when the server starts
 connectToMongoDB("mongodb://127.0.0.1:27017/short-url").then(() =>
@@ -53,6 +55,7 @@ app.use(express.urlencoded({ extended: false })); // Parse URL-encoded bodies
 // Routes setup
 app.use("/url", urlRoute); // Mount the URL route handler at "/url"
 app.use("/", staticRoute); // Mount the static router at "/"
+app.use("/user", userRoute); //Mount the user Router at "/user"
 
 // Route to handle redirecting to original URL based on short ID
 app.get("/url/:shortId", async (req, res) => {

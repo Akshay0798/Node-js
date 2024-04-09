@@ -14,4 +14,12 @@ router.get("/", async (req, res) => {
   });
 });
 
+router.get("/signup", (req, res) => {
+  return res.render("signup");
+});
+
+router.get("/login", (req, res) => {
+  return res.render("login");
+});
+
 module.exports = router; // Export the router to be used by the main application
