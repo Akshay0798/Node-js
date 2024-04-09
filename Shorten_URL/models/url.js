@@ -1,22 +1,23 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose"); // Importing Mongoose for MongoDB operations
 
+// Defining the schema for URL entries in the database
 const urlSchema = new mongoose.Schema(
   {
     shortId: {
       type: String,
       required: true,
-      unique: true,
+      unique: true, // Ensures each shortId is unique
     },
     redirectURL: {
       type: String,
-      required: true,
+      required: true, // URL to redirect to, must be provided
     },
-    visitHistory: [{ timestamps: { type: Number } }],
+    visitHistory: [{ timestamps: { type: Number } }], // Array to track visit history with timestamps
   },
-  { timestamps: true } // The schema will automatically add 'createdAt' and 'updatedAt' fields to each document
+  { timestamps: true } // Automatically add 'createdAt' and 'updatedAt' fields to each document
 );
 
-
-// Create a model named "URL" using the schema
+// Create a model named "URL" using the defined schema
 const URL = mongoose.model("url", urlSchema);
-module.exports = URL;
+
+module.exports = URL; // Export the URL model for use in other parts of the application
