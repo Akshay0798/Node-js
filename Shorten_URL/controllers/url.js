@@ -7,14 +7,14 @@ async function handleGenerateNewShortURL(req, res) {
     if (!body.url) return res.status(400).json({ error: "URL is required" });
 
     // Check if req.user is defined before accessing its properties
-    const createdBy = req.user ? req.user._id : null;
+    // const createdBy = req.user ? req.user._id : null;
 
     const shortID = shortid();
     await URL.create({
       shortId: shortID,
       redirectURL: body.url,
       visitHistory: [],
-      createdBy: createdBy,
+      createdBy: req.user._id,
     });
 
     return res.render("home", { id: shortID });

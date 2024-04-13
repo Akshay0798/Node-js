@@ -24,14 +24,14 @@
 
   <!-- Display generated URL if available -->
   <% if (locals.id) { %>
-    <p>URL Generated: <a href="http://localhost:8001/url/<%= id %>">http://localhost:8001/url/<%= id %></a></p>
+    <p>URL Generated: <a href="http://localhost:9999/url/<%= id %>">http://localhost:9999/url/<%= id %></a></p>
   <% } %>
 
   <!-- URL input form -->
   <div>
     <form method="POST" action="/url">
       <label for="urlInput">Enter your original URL:</label>
-      <input type="text" id="urlInput" name="url" placeholder="https://example.com" />
+      <input type="text" id="urlInput" name="url" placeholder="http://example.com" />
       <button type="submit">Generate</button>
     </form>
   </div>
