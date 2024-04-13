@@ -1,12 +1,14 @@
-const mongoose = require("mongoose"); // Importing Mongoose for MongoDB operations
+const mongoose = require("mongoose");
 
-// Async function to connect to MongoDB
 async function connectToMongoDB(url) {
-  // Connect to MongoDB using the provided URL as a Parameter
-  return mongoose.connect(url); // This returns a promise representing the connection process
+  try {
+    await mongoose.connect(url);
+    console.log("MongoDB Connected...");
+  } catch (error) {
+    console.error("Error connecting to MongoDB:", error);
+  }
 }
 
-// Exporting the connectToMongoDB function for use in other parts of the application
 module.exports = {
   connectToMongoDB,
 };
