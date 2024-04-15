@@ -1,3 +1,6 @@
+
+
+// we were maintaining state bcoz its statefull authentication
 const sessionIdToUserMap = new Map();
 
 function setUser(id, user) {
